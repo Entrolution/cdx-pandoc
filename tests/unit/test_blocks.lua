@@ -3,7 +3,7 @@
 -- Unit tests for lib/blocks.lua
 -- Tests pure-table helper functions that don't require Pandoc runtime
 
-PANDOC_SCRIPT_FILE = "codex.lua"
+PANDOC_SCRIPT_FILE = "cdx.lua"
 
 local test = dofile("tests/unit/test_utils.lua")
 local blocks = dofile("lib/blocks.lua")

@@ -1,6 +1,6 @@
 -- lib/academic.lua
 -- Writer-side academic extension block conversion
--- Converts Pandoc Divs/RawBlocks to academic:* Codex blocks
+-- Converts Pandoc Divs/RawBlocks to academic:* CDX blocks
 
 local utils = dofile((PANDOC_SCRIPT_FILE and (PANDOC_SCRIPT_FILE:match("(.*/)" ) or "") or "") .. "lib/utils.lua")
 local has_class = utils.has_class
@@ -12,7 +12,7 @@ local M = {}
 -- Module references (set by init)
 local blocks = nil
 
--- Extension tracker function (set by codex.lua)
+-- Extension tracker function (set by cdx.lua)
 local track_extension = function() end
 
 function M.set_blocks(mod)
@@ -392,7 +392,7 @@ end
 -- Convert a Div block to its academic type
 -- @param block Pandoc Div element
 -- @param academic_type The classified type string
--- @return Codex block
+-- @return CDX block
 function M.convert_div(block, academic_type)
     track_extension(utils.EXT_ACADEMIC)
     if theorem_variants[academic_type] then

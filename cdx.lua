@@ -1,11 +1,11 @@
--- codex.lua
--- Pandoc custom writer for Codex Document Format
+-- cdx.lua
+-- Pandoc custom writer for CDX Document Format
 --
 -- Usage:
---   pandoc input.md -t codex.lua -o output.json
+--   pandoc input.md -t cdx.lua -o output.json
 --
 -- Output: JSON containing manifest, content, and dublin_core sections
--- that can be unpacked into a Codex directory structure and packaged.
+-- that can be unpacked into a CDX directory structure and packaged.
 
 -- Get the directory containing this script
 local script_dir = PANDOC_SCRIPT_FILE and (PANDOC_SCRIPT_FILE:match("(.*/)" ) or "") or ""
@@ -52,7 +52,7 @@ academic.set_extension_tracker(track_extension)
 blocks.set_academic(academic)
 
 -- Spec version
-local CODEX_VERSION = "0.1"
+local CDX_VERSION = "0.1"
 local CONTENT_VERSION = "0.7.1"
 
 -- Generate ISO 8601 timestamp
@@ -70,7 +70,7 @@ local function create_manifest()
     local now = iso_timestamp()
 
     return {
-        codex = CODEX_VERSION,
+        cdx = CDX_VERSION,
         id = "pending",
         state = "draft",
         created = now,

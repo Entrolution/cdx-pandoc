@@ -30,7 +30,7 @@ Ordered list:
 
 ``` python
 def hello_world():
-    print("Hello, Codex!")
+    print("Hello, CDX!")
 ```
 
 ## Blockquote

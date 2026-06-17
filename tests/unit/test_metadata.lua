@@ -4,7 +4,7 @@
 -- Tests functions that operate on plain Lua tables (no Pandoc dependency)
 
 -- Need to provide a minimal PANDOC_SCRIPT_FILE so the module can load utils
-PANDOC_SCRIPT_FILE = "codex.lua"
+PANDOC_SCRIPT_FILE = "cdx.lua"
 
 local test = dofile("tests/unit/test_utils.lua")
 local metadata = dofile("lib/metadata.lua")
@@ -26,7 +26,7 @@ test.assert_not_nil(dm.terms)
 test.assert_eq("Untitled Document", dm.terms.title)
 test.assert_eq("Unknown", dm.terms.creator)
 test.assert_eq("Text", dm.terms.type)
-test.assert_eq("application/vnd.codex+json", dm.terms.format)
+test.assert_eq("application/vnd.cdx+json", dm.terms.format)
 
 -- ============================================
 -- Tests for generate_jsonld()

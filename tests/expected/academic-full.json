@@ -533,7 +533,7 @@
         }
       ],
       "date": "2024-01-15",
-      "format": "application/vnd.codex+json",
+      "format": "application/vnd.cdx+json",
       "title": "Academic Kitchen Sink",
       "type": "Text"
     },
@@ -550,14 +550,14 @@
     "name": "Academic Kitchen Sink"
   },
   "manifest": {
-    "codex": "0.1",
+    "cdx": "0.1",
     "content": {
       "hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
       "path": "content/document.json"
     },
     "extensions": [
       {
-        "id": "codex.academic",
+        "id": "cdx.academic",
         "required": false,
         "version": "0.1"
       }

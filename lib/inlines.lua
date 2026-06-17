@@ -1,5 +1,5 @@
 -- lib/inlines.lua
--- Convert Pandoc inline elements to Codex text nodes
+-- Convert Pandoc inline elements to CDX text nodes
 
 -- Load shared utilities
 local utils = dofile((PANDOC_SCRIPT_FILE and (PANDOC_SCRIPT_FILE:match("(.*/)" ) or "") or "") .. "lib/utils.lua")
@@ -8,7 +8,7 @@ local has_class = utils.has_class
 
 local M = {}
 
--- Extension tracker function (set by codex.lua)
+-- Extension tracker function (set by cdx.lua)
 local track_extension = function() end
 
 -- Set the extension tracker function
@@ -505,11 +505,11 @@ function M.merge_adjacent(nodes)
     return result
 end
 
--- Convert a list of Pandoc inlines to Codex text nodes
+-- Convert a list of Pandoc inlines to CDX text nodes
 -- This is the main entry point
 -- @param inlines Pandoc inline list
 -- @param ctx Optional context for state accumulation (defaults to global)
--- @return Array of Codex text nodes
+-- @return Array of CDX text nodes
 function M.convert(inlines, ctx)
     if not inlines then
         return {}

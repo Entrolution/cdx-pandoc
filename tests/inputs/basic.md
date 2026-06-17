@@ -2,10 +2,10 @@
 title: Basic Test Document
 author: Test Author
 date: 2025-01-28
-abstract: A simple test document for the Codex Pandoc writer.
+abstract: A simple test document for the CDX Pandoc writer.
 keywords:
   - test
-  - codex
+  - cdx
   - pandoc
 lang: en
 ---
@@ -38,7 +38,7 @@ Ordered list:
 
 ```python
 def hello_world():
-    print("Hello, Codex!")
+    print("Hello, CDX!")
 ```
 
 ## Blockquote

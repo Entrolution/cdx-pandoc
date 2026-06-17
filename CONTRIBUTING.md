@@ -43,7 +43,7 @@ make test-golden
 make test-reader
 
 # Test with a specific input file
-pandoc input.md -t codex.lua -o output.cdx
+pandoc input.md -t cdx.lua -o output.cdx
 ```
 
 Before submitting a PR, run the full suite:
@@ -90,7 +90,7 @@ See the [Project Structure section in README.md](README.md#project-structure) fo
 
 ## Specification Reference
 
-This writer implements the [Codex Document Format Specification](https://github.com/Entrolution/codex-file-format-spec). When implementing new features:
+This writer implements the [CDX Document Format Specification](https://github.com/Entrolution/codex-file-format-spec). When implementing new features:
 
 - Reference the relevant spec section
 - Note any deviations or extensions

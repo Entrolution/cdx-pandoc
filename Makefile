@@ -1,7 +1,7 @@
-# Makefile for Codex Pandoc Writer
+# Makefile for CDX Pandoc Writer
 
 PANDOC := pandoc
-WRITER := codex.lua
+WRITER := cdx.lua
 JQ := jq
 
 # Test input files
@@ -14,7 +14,7 @@ TEST_CDX := $(patsubst tests/inputs/%.md,tests/outputs/%.cdx,$(TEST_INPUTS))
 all: test
 
 help:
-	@echo "Codex Pandoc Writer"
+	@echo "CDX Pandoc Writer"
 	@echo ""
 	@echo "Targets:"
 	@echo "  test-all     Run everything (lint + test + golden + reader + validate)"
@@ -108,7 +108,7 @@ validate-schema: test-json
 	@echo "Validating against spec schemas..."
 	@for f in tests/outputs/*.json; do \
 		echo "Checking $$f..."; \
-		$(JQ) -e '.manifest.codex' $$f > /dev/null || { echo "  WARN: no manifest.codex version"; continue; }; \
+		$(JQ) -e '.manifest.cdx' $$f > /dev/null || { echo "  WARN: no manifest.cdx version"; continue; }; \
 		$(JQ) -e '.content.blocks | type == "array"' $$f > /dev/null || { echo "  FAIL: content.blocks is not an array"; exit 1; }; \
 		$(JQ) -e '.dublin_core.terms | type == "object"' $$f > /dev/null || { echo "  FAIL: dublin_core.terms is not an object"; exit 1; }; \
 		$(JQ) -e '[.content.blocks[] | .type] | all(. != null and . != "")' $$f > /dev/null || { echo "  FAIL: block missing type field"; exit 1; }; \

@@ -263,7 +263,7 @@
         "children": [
           {
             "type": "text",
-            "value": "def hello_world():\n    print(\"Hello, Codex!\")"
+            "value": "def hello_world():\n    print(\"Hello, CDX!\")"
           }
         ],
         "language": "python",
@@ -318,12 +318,12 @@
         }
       ],
       "date": "2025-01-28",
-      "description": "A simple test document for the Codex Pandoc writer.",
-      "format": "application/vnd.codex+json",
+      "description": "A simple test document for the CDX Pandoc writer.",
+      "format": "application/vnd.cdx+json",
       "language": "en",
       "subject": [
         "test",
-        "codex",
+        "cdx",
         "pandoc"
       ],
       "title": "Basic Test Document",
@@ -339,13 +339,13 @@
       "name": "Test Author"
     },
     "datePublished": "2025-01-28",
-    "description": "A simple test document for the Codex Pandoc writer.",
+    "description": "A simple test document for the CDX Pandoc writer.",
     "inLanguage": "en",
-    "keywords": "test, codex, pandoc",
+    "keywords": "test, cdx, pandoc",
     "name": "Basic Test Document"
   },
   "manifest": {
-    "codex": "0.1",
+    "cdx": "0.1",
     "content": {
       "hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
       "path": "content/document.json"

@@ -74,7 +74,7 @@
       ],
       "date": "2024-06-15",
       "description": "This document tests ORCID identifier extraction from author metadata.",
-      "format": "application/vnd.codex+json",
+      "format": "application/vnd.cdx+json",
       "title": "ORCID Metadata Test",
       "type": "Text"
     },
@@ -92,7 +92,7 @@
     "name": "ORCID Metadata Test"
   },
   "manifest": {
-    "codex": "0.1",
+    "cdx": "0.1",
     "content": {
       "hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
       "path": "content/document.json"

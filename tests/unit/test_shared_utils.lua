@@ -155,10 +155,10 @@ print("")
 print("-- extension constant tests --")
 
 test.test("EXT_SEMANTIC constant")
-test.assert_eq("codex.semantic", utils.EXT_SEMANTIC)
+test.assert_eq("cdx.semantic", utils.EXT_SEMANTIC)
 
 test.test("EXT_ACADEMIC constant")
-test.assert_eq("codex.academic", utils.EXT_ACADEMIC)
+test.assert_eq("cdx.academic", utils.EXT_ACADEMIC)
 
 -- ============================================
 -- Tests for theorem variant constants (Step 4d)

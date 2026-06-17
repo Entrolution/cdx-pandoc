@@ -1,5 +1,5 @@
--- Reader: Codex text nodes → Pandoc inlines
--- Converts Codex text nodes with marks to Pandoc inline elements.
+-- Reader: CDX text nodes → Pandoc inlines
+-- Converts CDX text nodes with marks to Pandoc inline elements.
 
 local M = {}
 
@@ -23,7 +23,7 @@ end
 -- Footnote storage (set externally by reader_blocks)
 M._footnotes = {}
 
--- Convert an array of Codex text nodes to Pandoc inlines
+-- Convert an array of CDX text nodes to Pandoc inlines
 function M.convert(nodes)
     local result = {}
     for _, node in ipairs(nodes) do

@@ -7,7 +7,7 @@ local meta_to_string = utils.meta_to_string
 
 local M = {}
 
--- Map CSL types to Codex entry types
+-- Map CSL types to CDX entry types
 M.TYPE_MAP = {
     ["article-journal"] = "article-journal",
     ["article-magazine"] = "article-magazine",
@@ -139,8 +139,8 @@ function M.extract_date(date_val)
     return result.year and result or nil
 end
 
--- Simple string fields to copy from CSL reference to Codex entry
--- Each entry is {csl_field, codex_field} (codex_field defaults to csl_field)
+-- Simple string fields to copy from CSL reference to CDX entry
+-- Each entry is {csl_field, cdx_field} (cdx_field defaults to csl_field)
 local SIMPLE_FIELDS = {
     {"title"},
     {"container-title"},
@@ -155,9 +155,9 @@ local SIMPLE_FIELDS = {
     {"abstract"},
 }
 
--- Extract a single CSL reference entry to Codex format
+-- Extract a single CSL reference entry to CDX format
 -- @param ref CSL reference (MetaMap or table)
--- @return Codex bibliography entry
+-- @return CDX bibliography entry
 function M.extract_entry(ref)
     if not ref then
         return nil
@@ -180,7 +180,7 @@ function M.extract_entry(ref)
         return nil
     end
 
-    -- Type (map to Codex types or keep as-is)
+    -- Type (map to CDX types or keep as-is)
     local ref_type = get_field("type")
     entry.type = M.TYPE_MAP[ref_type] or ref_type or "other"
 
@@ -198,9 +198,9 @@ function M.extract_entry(ref)
     -- Simple string fields
     for _, field in ipairs(SIMPLE_FIELDS) do
         local csl_name = field[1]
-        local codex_name = field[2] or csl_name
+        local cdx_name = field[2] or csl_name
         local val = get_field(csl_name)
-        if val then entry[codex_name] = val end
+        if val then entry[cdx_name] = val end
     end
 
     return entry

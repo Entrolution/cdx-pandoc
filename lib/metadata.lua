@@ -293,8 +293,8 @@ function M.extract(meta)
     local doc_type = meta_to_string(meta["type"]) or meta_to_string(meta.documentType)
     terms.type = doc_type or "Text"
 
-    -- Format (always Codex JSON)
-    terms.format = "application/vnd.codex+json"
+    -- Format (always CDX JSON)
+    terms.format = "application/vnd.cdx+json"
 
     -- If we have no title or creator, return nil
     if not terms.title then
@@ -318,7 +318,7 @@ function M.default_metadata()
             title = "Untitled Document",
             creator = "Unknown",
             type = "Text",
-            format = "application/vnd.codex+json"
+            format = "application/vnd.cdx+json"
         }
     }
 end

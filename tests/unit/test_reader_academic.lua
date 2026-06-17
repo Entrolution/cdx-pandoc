@@ -3,7 +3,7 @@
 -- Unit tests for lib/reader_academic.lua
 -- Tests type-to-class mapping and dispatch structure (no Pandoc runtime needed)
 
-PANDOC_SCRIPT_FILE = "codex.lua"
+PANDOC_SCRIPT_FILE = "cdx.lua"
 
 local test = dofile("tests/unit/test_utils.lua")
 

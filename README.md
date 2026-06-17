@@ -3,13 +3,13 @@
 [![CI](https://github.com/Entrolution/cdx-pandoc/actions/workflows/ci.yml/badge.svg)](https://github.com/Entrolution/cdx-pandoc/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg)](LICENSE-MIT)
 
-Pandoc custom writer and reader for [Codex Document Format](https://github.com/Entrolution/codex-file-format-spec) (`.cdx`) files.
+Pandoc custom writer and reader for [CDX Document Format](https://github.com/Entrolution/codex-file-format-spec) (`.cdx`) files.
 
 ## Overview
 
-This writer enables conversion from any Pandoc-supported format (Markdown, LaTeX, Word, etc.) to Codex Document Format. The conversion happens in two phases:
+This writer enables conversion from any Pandoc-supported format (Markdown, LaTeX, Word, etc.) to CDX Document Format. The conversion happens in two phases:
 
-1. **Lua Writer** (`codex.lua`) - Converts Pandoc AST to Codex JSON structures
+1. **Lua Writer** (`cdx.lua`) - Converts Pandoc AST to CDX JSON structures
 2. **Packaging** - Shell wrapper creates the final .cdx ZIP archive
 
 ## Requirements
@@ -26,7 +26,7 @@ This writer enables conversion from any Pandoc-supported format (Markdown, LaTeX
 Generate the intermediate JSON structure:
 
 ```bash
-pandoc input.md -t codex.lua -o output.json
+pandoc input.md -t cdx.lua -o output.json
 ```
 
 ### Full Pipeline (Recommended)
@@ -48,9 +48,9 @@ Any format Pandoc can read:
 - reStructuredText (.rst)
 - And many more...
 
-## Reading Codex Documents
+## Reading CDX Documents
 
-Convert Codex JSON back to any Pandoc-supported output format:
+Convert CDX JSON back to any Pandoc-supported output format:
 
 ```bash
 pandoc -f cdx-reader.lua output.json -o document.md
@@ -64,7 +64,7 @@ The reader handles core block types (paragraphs, headings, lists, code blocks, b
 
 ### Block Types Supported
 
-| Pandoc | Codex | Notes |
+| Pandoc | CDX | Notes |
 |--------|-------|-------|
 | Para | paragraph | Text content |
 | Header | heading | Levels 1-6, preserves IDs |
@@ -96,7 +96,7 @@ The reader handles core block types (paragraphs, headings, lists, code blocks, b
 
 ### Inline Formatting
 
-| Pandoc | Codex Mark |
+| Pandoc | CDX Mark |
 |--------|------------|
 | Strong | bold |
 | Emph | italic |
@@ -224,7 +224,7 @@ The writer produces a JSON structure with three sections:
 ```json
 {
   "manifest": {
-    "codex": "0.1",
+    "cdx": "0.1",
     "id": "pending",
     "state": "draft",
     "created": "2025-01-28T10:00:00Z",
@@ -248,7 +248,7 @@ The writer produces a JSON structure with three sections:
 }
 ```
 
-The packaging script extracts these into the proper Codex directory structure.
+The packaging script extracts these into the proper CDX directory structure.
 
 ## Development
 
@@ -267,8 +267,8 @@ make test-reader      # Test round-trip (JSON → markdown)
 
 ```
 cdx-pandoc/
-├── codex.lua               # Main Pandoc custom writer
-├── cdx-reader.lua          # Codex → Pandoc reader
+├── cdx.lua                 # Main Pandoc custom writer
+├── cdx-reader.lua          # CDX → Pandoc reader
 ├── lib/
 │   ├── blocks.lua          # Writer: block type converters
 │   ├── inlines.lua         # Writer: inline/text node converters
@@ -336,14 +336,14 @@ Convert:
 
 ### "Cannot find library" error
 
-Ensure you're running pandoc from the project root directory, or that the `lib/` directory is in the same location as `codex.lua`.
+Ensure you're running pandoc from the project root directory, or that the `lib/` directory is in the same location as `cdx.lua`.
 
 ### Citations not appearing in bibliography
 
 Add the `--citeproc` flag to enable Pandoc's citation processor:
 
 ```bash
-pandoc input.md --citeproc -t codex.lua -o output.json
+pandoc input.md --citeproc -t cdx.lua -o output.json
 ```
 
 ### Empty or missing metadata
@@ -368,7 +368,7 @@ Inline math uses single dollar signs: `$x = y$`. Inline math is preserved as a `
 
 ### Reader round-trip loses semantic data
 
-The reader converts Codex back to standard Pandoc elements. Most block types survive round-trip faithfully:
+The reader converts CDX back to standard Pandoc elements. Most block types survive round-trip faithfully:
 
 - **Core blocks**: paragraphs, headings, lists, tables, code, math, images, figures, definition lists, admonitions all round-trip cleanly.
 - **Academic blocks**: theorems (variant, id, title), proofs (of, method), exercises (difficulty, hints, solutions), algorithms (title, pseudocode), abstracts (keywords), and equation groups (reconstructed LaTeX environments) all survive via Pandoc Div attributes.
