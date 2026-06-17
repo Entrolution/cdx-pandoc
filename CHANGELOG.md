@@ -46,7 +46,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [0.5.0] - 2026-02-04
 
 ### Added
-- **Academic extension** (`codex.academic`): theorems (8 variants), proofs, exercises with hints/solutions, exercise sets, algorithms, abstracts with keywords, equation groups
+- **Academic extension** (`cdx.academic`): theorems (8 variants), proofs, exercises with hints/solutions, exercise sets, algorithms, abstracts with keywords, equation groups
 - Academic cross-reference marks: `theorem-ref`, `equation-ref`, `algorithm-ref` for typed internal links
 - Admonition blocks from fenced Divs (note, warning, tip, danger, important, caution)
 - Figure container blocks with `figcaption` children and subfigure support
@@ -108,10 +108,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [0.1.0] - 2025-01-25
 
 ### Added
-- Initial Pandoc custom writer for Codex format
+- Initial Pandoc custom writer for CDX format
 - Block types: paragraph, heading, list, codeBlock, blockquote, table, math, image, horizontalRule
 - Inline marks: bold, italic, code, link, strikethrough, underline, superscript, subscript
 - Dublin Core metadata extraction from YAML frontmatter
-- Pandoc reader for Codex JSON back to any output format
+- Pandoc reader for CDX JSON back to any output format
 - Full pipeline script for creating `.cdx` archives
 - Integration test suite with 12 test cases

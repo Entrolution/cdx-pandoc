@@ -1,5 +1,5 @@
 -- lib/json.lua
--- JSON encoding utilities for Codex Pandoc writer
+-- JSON encoding utilities for CDX Pandoc writer
 
 local M = {}
 

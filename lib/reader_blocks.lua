@@ -1,5 +1,5 @@
--- Reader: Codex blocks → Pandoc blocks
--- Converts Codex block types to Pandoc AST block elements.
+-- Reader: CDX blocks → Pandoc blocks
+-- Converts CDX block types to Pandoc AST block elements.
 
 local M = {}
 
@@ -37,7 +37,7 @@ function M.extract_footnotes(blocks)
     return footnotes
 end
 
--- Convert an array of Codex blocks to Pandoc blocks
+-- Convert an array of CDX blocks to Pandoc blocks
 function M.convert(blocks)
     local result = {}
     for _, block in ipairs(blocks) do
@@ -92,7 +92,7 @@ local skip_types = {
     ["semantic:bibliography"] = true,
 }
 
--- Convert a single Codex block to Pandoc block(s)
+-- Convert a single CDX block to Pandoc block(s)
 function M.convert_block(block)
     local btype = block.type or ""
 

@@ -1,5 +1,5 @@
 -- lib/blocks.lua
--- Convert Pandoc blocks to Codex block structures
+-- Convert Pandoc blocks to CDX block structures
 
 local utils = dofile((PANDOC_SCRIPT_FILE and (PANDOC_SCRIPT_FILE:match("(.*/)" ) or "") or "") .. "lib/utils.lua")
 local has_class = utils.has_class
@@ -15,10 +15,10 @@ local inlines = nil
 -- Academic module (will be set by init, optional)
 local academic = nil
 
--- Extension tracker function (set by codex.lua)
+-- Extension tracker function (set by cdx.lua)
 local track_extension = function() end
 
--- Bibliography context (set by codex.lua before conversion)
+-- Bibliography context (set by cdx.lua before conversion)
 local bib_context = {
     csl_entries = {},
     style = "unknown"
@@ -45,9 +45,9 @@ function M.set_bibliography_context(csl_entries, style)
     bib_context.style = style or "unknown"
 end
 
--- Convert a list of Pandoc blocks to Codex blocks
+-- Convert a list of Pandoc blocks to CDX blocks
 -- @param blocks Pandoc block list
--- @return Array of Codex blocks
+-- @return Array of CDX blocks
 function M.convert(blocks)
     if not blocks then
         return {}
@@ -109,9 +109,9 @@ block_handlers.LineBlock = function(block)
     }
 end
 
--- Convert a single Pandoc block to a Codex block
+-- Convert a single Pandoc block to a CDX block
 -- @param block Pandoc block element
--- @return Codex block table or nil
+-- @return CDX block table or nil
 function M.convert_block(block)
     local tag = block.t or block.tag
     local handler = block_handlers[tag]

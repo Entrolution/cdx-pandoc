@@ -1,6 +1,6 @@
 #!/usr/bin/env lua
 -- tests/unit/test_utils.lua
--- Simple test framework for Codex Pandoc writer
+-- Simple test framework for CDX Pandoc writer
 
 local M = {}
 

@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 #
-# pandoc-to-cdx.sh - Convert documents to Codex format using Pandoc
+# pandoc-to-cdx.sh - Convert documents to CDX format using Pandoc
 #
 # Usage:
 #   ./pandoc-to-cdx.sh input.md output.cdx
 #   ./pandoc-to-cdx.sh input.docx output.cdx
 #
 # This script:
-# 1. Runs Pandoc with the Codex custom writer
+# 1. Runs Pandoc with the CDX custom writer
 # 2. Extracts the JSON output into proper directory structure
 # 3. Computes content hash and updates manifest
 # 4. Packages into a .cdx ZIP archive
@@ -22,7 +22,7 @@ set -euo pipefail
 # Script directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WRITER_DIR="$(dirname "$SCRIPT_DIR")"
-CODEX_WRITER="$WRITER_DIR/codex.lua"
+CDX_WRITER="$WRITER_DIR/cdx.lua"
 
 # Colors for output
 RED='\033[0;31m'
@@ -33,11 +33,11 @@ NC='\033[0m' # No Color
 usage() {
     echo "Usage: $(basename "$0") <input_file> <output.cdx>"
     echo ""
-    echo "Convert any Pandoc-supported format to Codex Document Format (.cdx)"
+    echo "Convert any Pandoc-supported format to CDX Document Format (.cdx)"
     echo ""
     echo "Arguments:"
     echo "  input_file   Source document (Markdown, LaTeX, Word, etc.)"
-    echo "  output.cdx   Output Codex archive"
+    echo "  output.cdx   Output CDX archive"
     echo ""
     echo "Options:"
     echo "  -h, --help   Show this help message"
@@ -101,8 +101,8 @@ convert() {
         error "Input file not found: $input_file"
     fi
 
-    if [[ ! -f "$CODEX_WRITER" ]]; then
-        error "Codex writer not found: $CODEX_WRITER"
+    if [[ ! -f "$CDX_WRITER" ]]; then
+        error "CDX writer not found: $CDX_WRITER"
     fi
 
     # Create temp directory
@@ -110,16 +110,16 @@ convert() {
     temp_dir=$(mktemp -d)
     trap "rm -rf '$temp_dir'" EXIT
 
-    info "Converting $input_file to Codex format..."
+    info "Converting $input_file to CDX format..."
 
-    # Run Pandoc with the Codex writer
+    # Run Pandoc with the CDX writer
     local json_output="$temp_dir/output.json"
-    if ! pandoc "$input_file" -t "$CODEX_WRITER" -o "$json_output" 2>&1; then
+    if ! pandoc "$input_file" -t "$CDX_WRITER" -o "$json_output" 2>&1; then
         error "Pandoc conversion failed"
     fi
 
     # Create directory structure
-    info "Creating Codex directory structure..."
+    info "Creating CDX directory structure..."
     mkdir -p "$temp_dir/cdx/content"
     mkdir -p "$temp_dir/cdx/metadata"
 
@@ -145,7 +145,7 @@ convert() {
        "$json_output" > "$temp_dir/cdx/manifest.json"
 
     # Create the .cdx archive
-    info "Creating Codex archive..."
+    info "Creating CDX archive..."
     local output_path
     output_path="$(cd "$(dirname "$output_file")" && pwd)/$(basename "$output_file")"
 

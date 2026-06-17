@@ -1,5 +1,5 @@
--- Codex Document Format → Pandoc Reader
--- Converts Codex JSON to Pandoc AST for output to any format.
+-- CDX Document Format → Pandoc Reader
+-- Converts CDX JSON to Pandoc AST for output to any format.
 --
 -- Usage:
 --   pandoc -f cdx-reader.lua output.json -o document.md

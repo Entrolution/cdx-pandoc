@@ -4,7 +4,7 @@
 -- Tests functions that operate on plain Lua tables (no Pandoc dependency)
 
 -- Need to provide a minimal PANDOC_SCRIPT_FILE so the module can load utils
-PANDOC_SCRIPT_FILE = "codex.lua"
+PANDOC_SCRIPT_FILE = "cdx.lua"
 
 local test = dofile("tests/unit/test_utils.lua")
 local inlines = dofile("lib/inlines.lua")

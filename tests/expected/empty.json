@@ -6,7 +6,7 @@
   "dublin_core": {
     "terms": {
       "creator": "Unknown",
-      "format": "application/vnd.codex+json",
+      "format": "application/vnd.cdx+json",
       "title": "Empty Document",
       "type": "Text"
     },
@@ -22,7 +22,7 @@
     "name": "Empty Document"
   },
   "manifest": {
-    "codex": "0.1",
+    "cdx": "0.1",
     "content": {
       "hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
       "path": "content/document.json"

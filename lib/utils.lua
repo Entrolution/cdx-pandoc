@@ -1,5 +1,5 @@
 -- lib/utils.lua
--- Shared utility functions for Codex Pandoc writer
+-- Shared utility functions for CDX Pandoc writer
 -- NOTE: Each module that requires utils.lua uses dofile() rather than require()
 -- because Pandoc custom writers don't support Lua's package.path/require system.
 -- This means utils.lua is re-executed per module, but the overhead is negligible.
@@ -44,8 +44,8 @@ function M.meta_to_string(value)
 end
 
 -- Extension ID constants
-M.EXT_SEMANTIC = "codex.semantic"
-M.EXT_ACADEMIC = "codex.academic"
+M.EXT_SEMANTIC = "cdx.semantic"
+M.EXT_ACADEMIC = "cdx.academic"
 
 -- Theorem variant types (shared between writer and reader)
 M.THEOREM_VARIANTS = {

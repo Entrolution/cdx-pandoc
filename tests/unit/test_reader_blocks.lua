@@ -3,7 +3,7 @@
 -- Unit tests for lib/reader_blocks.lua
 -- Tests dispatch table structure and handler existence (no Pandoc runtime needed)
 
-PANDOC_SCRIPT_FILE = "codex.lua"
+PANDOC_SCRIPT_FILE = "cdx.lua"
 
 local test = dofile("tests/unit/test_utils.lua")
 

@@ -1,6 +1,6 @@
 -- lib/reader_academic.lua
 -- Reader-side academic extension block conversion
--- Converts academic:* Codex blocks back to Pandoc AST
+-- Converts academic:* CDX blocks back to Pandoc AST
 
 local M = {}
 
