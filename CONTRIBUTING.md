@@ -90,7 +90,7 @@ See the [Project Structure section in README.md](README.md#project-structure) fo
 
 ## Specification Reference
 
-This writer implements the [CDX Document Format Specification](https://github.com/Entrolution/codex-file-format-spec). When implementing new features:
+This writer implements the [CDX Document Format Specification](https://github.com/Entrolution/cdx-file-format-spec). When implementing new features:
 
 - Reference the relevant spec section
 - Note any deviations or extensions

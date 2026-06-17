@@ -96,13 +96,13 @@ test-reader: test-json
 	done
 	@echo "Reader tests complete."
 
-# Validate against spec schemas (requires ../codex-file-format-spec/schemas/)
-SCHEMA_DIR := ../codex-file-format-spec/schemas
+# Validate against spec schemas (requires ../cdx-file-format-spec/schemas/)
+SCHEMA_DIR := ../cdx-file-format-spec/schemas
 
 validate-schema: test-json
 	@if [ ! -d "$(SCHEMA_DIR)" ]; then \
 		echo "Schema directory not found: $(SCHEMA_DIR)"; \
-		echo "Skipping schema validation (clone codex-file-format-spec alongside this repo)"; \
+		echo "Skipping schema validation (clone cdx-file-format-spec alongside this repo)"; \
 		exit 0; \
 	fi
 	@echo "Validating against spec schemas..."

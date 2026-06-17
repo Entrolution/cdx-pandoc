@@ -3,7 +3,7 @@
 [![CI](https://github.com/Entrolution/cdx-pandoc/actions/workflows/ci.yml/badge.svg)](https://github.com/Entrolution/cdx-pandoc/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg)](LICENSE-MIT)
 
-Pandoc custom writer and reader for [CDX Document Format](https://github.com/Entrolution/codex-file-format-spec) (`.cdx`) files.
+Pandoc custom writer and reader for [CDX Document Format](https://github.com/Entrolution/cdx-file-format-spec) (`.cdx`) files.
 
 ## Overview
 
@@ -377,7 +377,7 @@ The reader converts CDX back to standard Pandoc elements. Most block types survi
 
 ## Related Projects
 
-- [codex-file-format-spec](https://github.com/Entrolution/codex-file-format-spec) - Format specification
+- [cdx-file-format-spec](https://github.com/Entrolution/cdx-file-format-spec) - Format specification
 - [cdx-core](https://github.com/Entrolution/cdx-core) - Rust library and CLI
 
 ## Security
